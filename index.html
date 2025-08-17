@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console Invaders - Demo</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #00ff00;
+            line-height: 1.6;
+        }
+        .container {
+            background: #000;
+            border: 2px solid #00ff00;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        code {
+            background: #333;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #ffff00;
+        }
+        .copy-button {
+            background: #003300;
+            color: #00ff00;
+            border: 1px solid #00ff00;
+            padding: 5px 10px;
+            margin-left: 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-family: monospace;
+        }
+        .copy-button:hover {
+            background: #006600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Console Invaders</h1>
+        
+        <p>This demonstrates the <span class="highlight">single-file approach</span>. Just include one script tag and you're done!</p>
+        
+        <h2>💾 CDN Usage:</h2>
+        <div style="background: #333; padding: 15px; border-radius: 5px; margin: 10px 0;">
+            <code>&lt;script src="console-invaders.js"&gt;&lt;/script&gt;</code>
+            <button class="copy-button" onclick="copyToClipboard('&lt;script src=&quot;console-invaders-cdn.js&quot;&gt;&lt;/script&gt;')">Copy</button>
+            <button class="copy-button" onclick="downloadJS()">Download JS</button>
+        </div>
+        
+        <h2>🎮 Ready to Use!</h2>
+        <p>The script auto-enables all triggers. No configuration needed!</p>
+        
+        <div style="background: #001100; padding: 15px; border-radius: 5px; border: 1px solid #00ff00;">
+            <h3>How to Start:</h3>
+            <ul>
+                <li><code>invaders()</code> - Type in console to start</li>
+            </ul>
+        </div>
+        
+        <h2>🎯 Game Controls:</h2>
+        <ul>
+            <li><code>Arrow Keys</code> - Move left/right</li>
+            <li><code>Spacebar</code> - Shoot</li>
+            <li><code>P</code> - Pause/Resume</li>
+            <li><code>Escape</code> - Hide game (keeps progress!)</li>
+        </ul>
+        
+        <h2>📊 Features:</h2>
+        <ul>
+            <li>✅ Progressive difficulty (infinite levels)</li>
+            <li>✅ Score system with level multipliers</li>
+            <li>✅ Epic final alien explosion</li>
+            <li>✅ Hide/resume functionality (ESC key)</li>
+            <li>✅ Perfect for secret easter eggs</li>
+        </ul>
+        
+        <p style="margin-top: 30px; font-size: 18px; text-align: center;">
+            <span class="highlight">Open your browser console and type invaders()</span><br>
+            <small>Press F12 to open console</small>
+        </p>
+    </div>
+
+    <!-- 🚀 ONE LINE TO RULE THEM ALL -->
+    <script src="console-invaders.js"></script>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard!');
+            });
+        }
+
+        function downloadJS() {
+            fetch('console-invaders.js')
+                .then(response => response.text())
+                .then(data => {
+                    const blob = new Blob([data], { type: 'application/javascript' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'console-invaders.js';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                });
+        }
+
+        // Auto-start the game for demo
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                if (typeof invaders === 'function') {
+                    invaders();
+                }
+            }, 1000); // Wait 1 second for everything to load
+        });
+    </script>
+</body>
+</html>
