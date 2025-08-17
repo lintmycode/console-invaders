@@ -1,11 +1,16 @@
 /**
- * Console Invaders - Standalone CDN Version
+ * Console Invaders
  * A retro Space Invaders game that runs in the browser console
  * 
- * Usage:
- * <script src="https://cdn.jsdelivr.net/gh/username/console-invaders/console-invaders-cdn.js"></script>
+ * CDN Usage:
+ * Original: <script src="https://cdn.jsdelivr.net/gh/lintmycode/console-invaders@main/console-invaders.js"></script>
+ * Minified: <script src="https://cdn.jsdelivr.net/gh/lintmycode/console-invaders@main/console-invaders.min.js"></script>
  * 
- * Auto-enables: Konami code (↑↑↓↓←→←→BA), Ctrl+Shift+I, and invaders() command
+ * Auto-enables: invaders() command
+ * Controls: Arrow keys (move), Space (shoot), P (pause), Escape (hide)
+ * 
+ * GitHub: https://github.com/lintmycode/console-invaders
+ * Nostalgia by NÍTIDA © 2025 - https://nitida.pt
  */
 (function() {
   'use strict';
