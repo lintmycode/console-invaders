@@ -2,6 +2,8 @@
 
 A retro Space Invaders game that runs entirely in the browser console! This is a simple single-file implementation perfect for demos or adding as an easter egg to web projects.
 
+**Play it:** https://lintmycode.github.io/console-invaders/ (GitHub Pages, from `main`) — open the console and type `invaders()`.
+
 ## Features
 
 - 🎮 Classic Space Invaders gameplay rendered in the console
